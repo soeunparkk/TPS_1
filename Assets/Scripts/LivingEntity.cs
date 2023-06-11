@@ -52,4 +52,9 @@ public class LivingEntity : MonoBehaviour, IDamageable {
         // 사망 상태를 참으로 변경
         dead = true;
     }
+
+    internal void OnDamage(float damage, object hitPoint, Vector3 hitNormal)
+    {
+        throw new NotImplementedException();
+    }
 }
