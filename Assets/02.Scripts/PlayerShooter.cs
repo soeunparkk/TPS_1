@@ -11,6 +11,8 @@ public class PlayerShooter : MonoBehaviour {
     private PlayerInput playerInput; // 플레이어의 입력
     private Animator playerAnimator; // 애니메이터 컴포넌트
 
+    public int ammoRemain = 0;
+
     private void Start() {
         // 사용할 컴포넌트들을 가져오기
         playerInput = GetComponent<PlayerInput>();
@@ -44,7 +46,9 @@ public class PlayerShooter : MonoBehaviour {
             }
         }
 
-      
+        ammoRemain = gun.ammoRemain;
+        UIManager.instance.UpdateAmmoText(gun.magAmmo, ammoRemain);
+
     }
 
     // 탄약 UI 갱신
@@ -52,7 +56,7 @@ public class PlayerShooter : MonoBehaviour {
         if (gun != null && UIManager.instance != null)
         {
             // UI 매니저의 탄약 텍스트에 탄창의 탄약과 남은 전체 탄약을 표시
-            UIManager.instance.UpdateAmmoText(gun.magAmmo, gun.ammoRemain);
+            UIManager.instance.UpdateAmmoText(gun.magAmmo, ammoRemain);
         }
     }
 

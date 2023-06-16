@@ -171,7 +171,6 @@ public class Gun : MonoBehaviour {
 
         state = State.Reloading;
         // 재장전 소리 재생
-
         gunAudioPlayer.PlayOneShot(gunData.reloadClip);
 
         // 재장전 소요 시간만큼 처리 쉬기
