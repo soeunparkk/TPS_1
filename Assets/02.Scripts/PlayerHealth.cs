@@ -40,6 +40,8 @@ public class PlayerHealth : LivingEntity {
         playerShooter.enabled = true;
     }
 
+
+
     // 체력 회복
     public override void RestoreHealth(float newHealth) {
         // LivingEntity의 RestoreHealth() 실행 (체력 증가)
@@ -96,4 +98,7 @@ public class PlayerHealth : LivingEntity {
             }
         }
     }
+
+
+
 }
